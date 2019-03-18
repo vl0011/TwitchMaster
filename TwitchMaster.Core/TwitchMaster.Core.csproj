@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4FB6B7B5-28DC-4294-B689-31A260F4F2F2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>TwitchMaster</RootNamespace>
-    <AssemblyName>TwitchMaster</AssemblyName>
+    <ProjectGuid>{4244B1A5-9BD1-413E-8AAF-B2892C90C27B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TwitchMaster.Core</RootNamespace>
+    <AssemblyName>TwitchMaster.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Enums\ClipSearchType.cs" />
+    <Compile Include="Enums\VideoSearchType.cs" />
+    <Compile Include="Models\RuntimeData.cs" />
+    <Compile Include="Models\TwitchClip.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TwitchMaster.Core\TwitchMaster.Core.csproj">
-      <Project>{4244b1a5-9bd1-413e-8aaf-b2892c90c27b}</Project>
-      <Name>TwitchMaster.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TwitchMaster.Services\TwitchMaster.Services.csproj">
-      <Project>{0977e76e-fa1e-4100-8156-8e5db0fbe670}</Project>
-      <Name>TwitchMaster.Services</Name>
-    </ProjectReference>
+    <Folder Include="Events\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
